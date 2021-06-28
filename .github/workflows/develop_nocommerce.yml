@@ -23,7 +23,8 @@ jobs:
         include-prerelease: true
 
     - name: Build with dotnet
-      run: dotnet build --configuration Release **/*.csproj
+      working-directory: /src/Presentation/Nop.Web
+      run: dotnet build Nop.Web.csproj --configuration Release 
 
     - name: dotnet publish
       run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
