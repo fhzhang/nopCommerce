@@ -34,6 +34,7 @@ namespace Nop.Web
         /// <param name="services">Collection of service descriptors</param>
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddApplicationInsightsTelemetry();
             services.ConfigureApplicationServices(_configuration, _webHostEnvironment);
         }
 
